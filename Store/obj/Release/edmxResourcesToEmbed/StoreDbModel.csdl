@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AMotorsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="AMotorsEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(AMotorsModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(AMotorsModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <EntitySet Name="cars" EntityType="AMotorsModel.car" />
+    <EntitySet Name="car_manufacturer" EntityType="AMotorsModel.car_manufacturer" />
+    <EntitySet Name="inventories" EntityType="AMotorsModel.inventory" />
+    <EntitySet Name="items" EntityType="AMotorsModel.item" />
+    <EntitySet Name="models" EntityType="AMotorsModel.model" />
+    <EntitySet Name="products" EntityType="AMotorsModel.product" />
+    <EntitySet Name="Product_Category" EntityType="AMotorsModel.Product_Category" />
+    <EntitySet Name="sysdiagrams" EntityType="AMotorsModel.sysdiagram" />
+    <EntitySet Name="caadasdrs" EntityType="AMotorsModel.caadasdr" />
+    <AssociationSet Name="FK_car_car_manufacturer" Association="AMotorsModel.FK_car_car_manufacturer">
+      <End Role="car_manufacturer" EntitySet="car_manufacturer" />
+      <End Role="car" EntitySet="cars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_car_model_car" Association="AMotorsModel.FK_car_model_car">
+      <End Role="car" EntitySet="cars" />
+      <End Role="model" EntitySet="models" />
+    </AssociationSet>
+    <AssociationSet Name="FK_inventory_item" Association="AMotorsModel.FK_inventory_item">
+      <End Role="item" EntitySet="items" />
+      <End Role="inventory" EntitySet="inventories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Item_Product" Association="AMotorsModel.FK_Item_Product">
+      <End Role="product" EntitySet="products" />
+      <End Role="item" EntitySet="items" />
+    </AssociationSet>
+    <AssociationSet Name="FK_product_model" Association="AMotorsModel.FK_product_model">
+      <End Role="model" EntitySet="models" />
+      <End Role="product" EntitySet="products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Product_Category" Association="AMotorsModel.FK_Product_Product_Category">
+      <End Role="Product_Category" EntitySet="Product_Category" />
+      <End Role="product" EntitySet="products" />
+    </AssociationSet>
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="car">
+    <Key>
+      <PropertyRef Name="car_Id" />
+    </Key>
+    <Property Name="car_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="cm_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="car_manufacturer" Relationship="AMotorsModel.FK_car_car_manufacturer" FromRole="car" ToRole="car_manufacturer" />
+    <NavigationProperty Name="models" Relationship="AMotorsModel.FK_car_model_car" FromRole="car" ToRole="model" />
+  </EntityType>
+  <EntityType Name="car_manufacturer">
+    <Key>
+      <PropertyRef Name="cm_Id" />
+    </Key>
+    <Property Name="cm_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="cars" Relationship="AMotorsModel.FK_car_car_manufacturer" FromRole="car_manufacturer" ToRole="car" />
+  </EntityType>
+  <EntityType Name="inventory">
+    <Key>
+      <PropertyRef Name="item_Id" />
+    </Key>
+    <Property Name="item_Id" Type="Int64" Nullable="false" />
+    <Property Name="quantity" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="item" Relationship="AMotorsModel.FK_inventory_item" FromRole="inventory" ToRole="item" />
+  </EntityType>
+  <EntityType Name="item">
+    <Key>
+      <PropertyRef Name="item_Id" />
+    </Key>
+    <Property Name="item_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="product_Id" Type="Int64" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="listPrice" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="unitCost" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="status" Type="Int32" />
+    <NavigationProperty Name="inventory" Relationship="AMotorsModel.FK_inventory_item" FromRole="item" ToRole="inventory" />
+    <NavigationProperty Name="product" Relationship="AMotorsModel.FK_Item_Product" FromRole="item" ToRole="product" />
+  </EntityType>
+  <EntityType Name="model">
+    <Key>
+      <PropertyRef Name="model_Id" />
+    </Key>
+    <Property Name="model_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="car_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="car" Relationship="AMotorsModel.FK_car_model_car" FromRole="model" ToRole="car" />
+    <NavigationProperty Name="products" Relationship="AMotorsModel.FK_product_model" FromRole="model" ToRole="product" />
+  </EntityType>
+  <EntityType Name="product">
+    <Key>
+      <PropertyRef Name="product_Id" />
+    </Key>
+    <Property Name="product_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="productCategory_Id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="model_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="items" Relationship="AMotorsModel.FK_Item_Product" FromRole="product" ToRole="item" />
+    <NavigationProperty Name="model" Relationship="AMotorsModel.FK_product_model" FromRole="product" ToRole="model" />
+    <NavigationProperty Name="Product_Category" Relationship="AMotorsModel.FK_Product_Product_Category" FromRole="product" ToRole="Product_Category" />
+    <Property Name="SpecialPrice" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="OldPrice" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="StockQuantity" Type="Int64" />
+    <Property Name="FullDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ShortDescription" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="OEM_num" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ST_num" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Part_num" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Product_Category">
+    <Key>
+      <PropertyRef Name="productCategory_Id" />
+    </Key>
+    <Property Name="productCategory_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="products" Relationship="AMotorsModel.FK_Product_Product_Category" FromRole="Product_Category" ToRole="product" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="caadasdr">
+    <Key>
+      <PropertyRef Name="caasdr_Id" />
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="caasdr_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_car_car_manufacturer">
+    <End Type="AMotorsModel.car_manufacturer" Role="car_manufacturer" Multiplicity="1" />
+    <End Type="AMotorsModel.car" Role="car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="car_manufacturer">
+        <PropertyRef Name="cm_Id" />
+      </Principal>
+      <Dependent Role="car">
+        <PropertyRef Name="cm_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_car_model_car">
+    <End Type="AMotorsModel.car" Role="car" Multiplicity="1" />
+    <End Type="AMotorsModel.model" Role="model" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="car">
+        <PropertyRef Name="car_Id" />
+      </Principal>
+      <Dependent Role="model">
+        <PropertyRef Name="car_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_inventory_item">
+    <End Type="AMotorsModel.item" Role="item" Multiplicity="1" />
+    <End Type="AMotorsModel.inventory" Role="inventory" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="item">
+        <PropertyRef Name="item_Id" />
+      </Principal>
+      <Dependent Role="inventory">
+        <PropertyRef Name="item_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Item_Product">
+    <End Type="AMotorsModel.product" Role="product" Multiplicity="1" />
+    <End Type="AMotorsModel.item" Role="item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="product">
+        <PropertyRef Name="product_Id" />
+      </Principal>
+      <Dependent Role="item">
+        <PropertyRef Name="product_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_product_model">
+    <End Type="AMotorsModel.model" Role="model" Multiplicity="1" />
+    <End Type="AMotorsModel.product" Role="product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="model">
+        <PropertyRef Name="model_Id" />
+      </Principal>
+      <Dependent Role="product">
+        <PropertyRef Name="model_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Product_Category">
+    <End Type="AMotorsModel.Product_Category" Role="Product_Category" Multiplicity="1" />
+    <End Type="AMotorsModel.product" Role="product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product_Category">
+        <PropertyRef Name="productCategory_Id" />
+      </Principal>
+      <Dependent Role="product">
+        <PropertyRef Name="productCategory_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

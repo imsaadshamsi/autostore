@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Store.Product_Category>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Category </h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+
+            <div class="panel-body">
+                <table class="table table-bordered">
+                    <tr class="panel-heading">
+                        <th>
+                            Image
+                        </th>
+
+                        <th>
+                            Category Name
+                        </th>
+                        <th>
+                            Description
+                        </th>
+
+                        <th>Action</th>
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @{ 
+                                    var imgSrc = "";
+
+                                    if (item.ThemeImage != null) { 
+                                    var base64 = Convert.ToBase64String(item.ThemeImage);
+                                    if (base64 != null)
+                                    {
+
+                                        imgSrc = String.Format("data:image/png;base64,{0}", base64);
+                                    }
+                                }
+                                }
+
+                                <img style="width:25%" src="@imgSrc" />
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.description)
+                            </td>
+
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.productCategory_Id }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.productCategory_Id }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.productCategory_Id })
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="akmal.com" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\saad\\documents\\visual\ studio\ 2015\\Projects\\Store\\Store\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\saad\\documents\\visual\ studio\ 2015\\Projects\\Store\\Store\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="AMotorsEntities-Web.config Connection String" description="AMotorsEntities Connection String used in web.config by the application to access the database." value="metadata=res://*/StoreDbModel.csdl|res://*/StoreDbModel.ssdl|res://*/StoreDbModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.;initial catalog=AMotors;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\saad\\documents\\visual\ studio\ 2015\\Projects\\Store\\Store\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='AMotorsEntities']/@connectionString" />
+  </parameter>
+</parameters>

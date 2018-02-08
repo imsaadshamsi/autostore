@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AMotorsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'AMotors.dbo.caadasdr' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="caadasdr">
+    <Key>
+      <PropertyRef Name="caasdr_Id" />
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="caasdr_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="car">
+    <Key>
+      <PropertyRef Name="car_Id" />
+    </Key>
+    <Property Name="car_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="cm_Id" Type="int" Nullable="false" />
+    <Property Name="ThemeImage" Type="varbinary(max)" />
+    <Property Name="ThumbImage" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="car_manufacturer">
+    <Key>
+      <PropertyRef Name="cm_Id" />
+    </Key>
+    <Property Name="cm_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="500" />
+    <Property Name="Email" Type="nvarchar" MaxLength="500" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="MobileNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="500" />
+    <Property Name="AdminComment" Type="nvarchar" MaxLength="4000" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="LastIpAddress" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedOnUtc" Type="datetime" Nullable="false" />
+    <Property Name="LastLoginDateUtc" Type="datetime" />
+    <Property Name="LastActivityDateUtc" Type="datetime" Nullable="false" />
+    <Property Name="ShippingAddress_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="inventory">
+    <Key>
+      <PropertyRef Name="item_Id" />
+    </Key>
+    <Property Name="item_Id" Type="bigint" Nullable="false" />
+    <Property Name="quantity" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="item">
+    <Key>
+      <PropertyRef Name="item_Id" />
+    </Key>
+    <Property Name="item_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="product_Id" Type="bigint" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="100" />
+    <Property Name="listPrice" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="unitCost" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="status" Type="int" />
+  </EntityType>
+  <EntityType Name="model">
+    <Key>
+      <PropertyRef Name="model_Id" />
+    </Key>
+    <Property Name="model_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="500" />
+    <Property Name="car_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderNumber" Type="nvarchar" MaxLength="4000" />
+    <Property Name="OrderGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CustomerId" Type="int" Nullable="false" />
+    <Property Name="ShippingAddressId" Type="int" />
+    <Property Name="OrderStatusId" Type="int" Nullable="false" />
+    <Property Name="ShippingStatusId" Type="int" Nullable="false" />
+    <Property Name="PaymentStatusId" Type="int" Nullable="false" />
+    <Property Name="PaymentMethodSystemName" Type="nvarchar" MaxLength="4000" />
+    <Property Name="OrderDiscount" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="OrderTotal" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="RefundedAmount" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="CustomerIp" Type="nvarchar" MaxLength="4000" />
+    <Property Name="ShippingMethod" Type="nvarchar" MaxLength="4000" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedOnUtc" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOnUtc" Type="datetime" Nullable="false" />
+    <Property Name="CustomerOrderComment" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="OrderItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderItemGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="OrderId" Type="int" Nullable="false" />
+    <Property Name="ProductId" Type="bigint" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="AttributeDescription" Type="nvarchar" MaxLength="4000" />
+    <Property Name="ItemWeight" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="ProductCost" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="product">
+    <Key>
+      <PropertyRef Name="product_Id" />
+    </Key>
+    <Property Name="product_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="productCategory_Id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="100" />
+    <Property Name="model_Id" Type="int" Nullable="false" />
+    <Property Name="SpecialPrice" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="OldPrice" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="StockQuantity" Type="bigint" />
+    <Property Name="FullDescription" Type="nvarchar(max)" />
+    <Property Name="ShortDescription" Type="varchar" MaxLength="300" />
+    <Property Name="OEM_num" Type="nvarchar" MaxLength="255" />
+    <Property Name="ST_num" Type="nvarchar" MaxLength="255" />
+    <Property Name="Part_num" Type="nvarchar" MaxLength="255" />
+    <Property Name="StockShopQTY" Type="bigint" />
+  </EntityType>
+  <EntityType Name="Product_Category">
+    <Key>
+      <PropertyRef Name="productCategory_Id" />
+    </Key>
+    <Property Name="productCategory_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="100" />
+    <Property Name="description" Type="nvarchar" MaxLength="500" />
+    <Property Name="ThemeImage" Type="varbinary(max)" />
+    <Property Name="ThumbImage" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_car_car_manufacturer">
+    <End Role="car_manufacturer" Type="Self.car_manufacturer" Multiplicity="1" />
+    <End Role="car" Type="Self.car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="car_manufacturer">
+        <PropertyRef Name="cm_Id" />
+      </Principal>
+      <Dependent Role="car">
+        <PropertyRef Name="cm_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_car_model_car">
+    <End Role="car" Type="Self.car" Multiplicity="1" />
+    <End Role="model" Type="Self.model" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="car">
+        <PropertyRef Name="car_Id" />
+      </Principal>
+      <Dependent Role="model">
+        <PropertyRef Name="car_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_inventory_item">
+    <End Role="item" Type="Self.item" Multiplicity="1" />
+    <End Role="inventory" Type="Self.inventory" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="item">
+        <PropertyRef Name="item_Id" />
+      </Principal>
+      <Dependent Role="inventory">
+        <PropertyRef Name="item_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Item_Product">
+    <End Role="product" Type="Self.product" Multiplicity="1" />
+    <End Role="item" Type="Self.item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="product">
+        <PropertyRef Name="product_Id" />
+      </Principal>
+      <Dependent Role="item">
+        <PropertyRef Name="product_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderItem_Order">
+    <End Role="Order" Type="Self.Order" Multiplicity="1" />
+    <End Role="OrderItem" Type="Self.OrderItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderItem">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderItem_product">
+    <End Role="product" Type="Self.product" Multiplicity="1" />
+    <End Role="OrderItem" Type="Self.OrderItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="product">
+        <PropertyRef Name="product_Id" />
+      </Principal>
+      <Dependent Role="OrderItem">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_product_model">
+    <End Role="model" Type="Self.model" Multiplicity="1" />
+    <End Role="product" Type="Self.product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="model">
+        <PropertyRef Name="model_Id" />
+      </Principal>
+      <Dependent Role="product">
+        <PropertyRef Name="model_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Product_Category">
+    <End Role="Product_Category" Type="Self.Product_Category" Multiplicity="1" />
+    <End Role="product" Type="Self.product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product_Category">
+        <PropertyRef Name="productCategory_Id" />
+      </Principal>
+      <Dependent Role="product">
+        <PropertyRef Name="productCategory_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="AMotorsModelStoreContainer">
+    <EntitySet Name="car" EntityType="Self.car" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="car_manufacturer" EntityType="Self.car_manufacturer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="inventory" EntityType="Self.inventory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="item" EntityType="Self.item" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="model" EntityType="Self.model" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderItem" EntityType="Self.OrderItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="product" EntityType="Self.product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product_Category" EntityType="Self.Product_Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="caadasdr" EntityType="Self.caadasdr" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [caadasdr].[caasdr_Id] AS [caasdr_Id], 
+    [caadasdr].[name] AS [name]
+    FROM [dbo].[caadasdr] AS [caadasdr]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_car_car_manufacturer" Association="Self.FK_car_car_manufacturer">
+      <End Role="car_manufacturer" EntitySet="car_manufacturer" />
+      <End Role="car" EntitySet="car" />
+    </AssociationSet>
+    <AssociationSet Name="FK_car_model_car" Association="Self.FK_car_model_car">
+      <End Role="car" EntitySet="car" />
+      <End Role="model" EntitySet="model" />
+    </AssociationSet>
+    <AssociationSet Name="FK_inventory_item" Association="Self.FK_inventory_item">
+      <End Role="item" EntitySet="item" />
+      <End Role="inventory" EntitySet="inventory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Item_Product" Association="Self.FK_Item_Product">
+      <End Role="product" EntitySet="product" />
+      <End Role="item" EntitySet="item" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Customer" Association="Self.FK_Order_Customer">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderItem_Order" Association="Self.FK_OrderItem_Order">
+      <End Role="Order" EntitySet="Order" />
+      <End Role="OrderItem" EntitySet="OrderItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderItem_product" Association="Self.FK_OrderItem_product">
+      <End Role="product" EntitySet="product" />
+      <End Role="OrderItem" EntitySet="OrderItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_product_model" Association="Self.FK_product_model">
+      <End Role="model" EntitySet="model" />
+      <End Role="product" EntitySet="product" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Product_Category" Association="Self.FK_Product_Product_Category">
+      <End Role="Product_Category" EntitySet="Product_Category" />
+      <End Role="product" EntitySet="product" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

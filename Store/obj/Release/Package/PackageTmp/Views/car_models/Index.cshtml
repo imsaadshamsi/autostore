@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Store.model>
+
+@{
+    ViewBag.Title = "Models List";
+}
+
+
+<div class="well well-small">
+    <h2>Car's List</h2>
+    <p>
+        <input type="button" value="Add New" class="btn btn-primary" onclick="location.href='@Url.Action("Create")'" />
+    </p>
+    <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">
+            Car Models
+        </div>
+        <div class="panel-body">
+            <div class="col-md-2">
+                <h4>  Car Name</h4>
+            </div>
+            <div class="col-md-2">
+                Aliase Name
+            </div>
+            <div class="col-md-2">
+                Year
+            </div>
+
+        </div>
+
+
+        <table class="table">
+            @foreach (var item in Model)
+            {
+
+                <ul class="list-group">
+
+                    <li class="list-group-item justify-content-between">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    @Html.DisplayFor(modelItem => item.car.name)
+                                </div>
+                                <div class="col-md-2">
+                                    @Html.DisplayFor(modelItem => item.name)
+                                </div>
+                                <div class="col-md-2">
+                                    @Html.DisplayFor(modelItem => item.description)
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="col-md-12">
+                                        <input type="button" value="Edit" class="btn btn-primary" onclick="location.href='@Url.Action("Edit", new { id = item.model_Id })'" />
+                                        <input type="button" value="Details" class="btn btn-primary" onclick="location.href='@Url.Action("Details", new { id = item.model_Id })'" />
+                                        <input type="button" value="Delete" class="btn btn-primary" onclick="location.href='@Url.Action("Delete", new { id = item.model_Id })'" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </li>
+
+                </ul>
+            }
+        </table>
+    </div>
+
+</div>

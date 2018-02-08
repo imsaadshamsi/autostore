@@ -1,0 +1,177 @@
+﻿@model IEnumerable<Store.product>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Product</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+
+            <div class="panel-body">
+                <table class="table table-bordered table-hover">
+                    <tr>
+                        <th>
+                            @Html.DisplayName("Photo")
+                        </th>
+                        <th>
+                            @Html.DisplayName("Category")
+                        </th>
+                        <th>
+                            @Html.DisplayName("Model")
+                        </th>
+                        <th>
+                            @Html.DisplayName("Short Description")
+                        </th>
+                        <th>
+                            @Html.DisplayName("Stock Quantity")
+                        </th>
+                        <th>
+                            @Html.DisplayName("Stock Shop QTY")
+                        </th>
+
+
+                        
+
+                        <th>
+                            @Html.DisplayName("Price")
+                        </th>
+
+
+                        <th>Action</th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @if (item.Product_Category.name == "Bonut")
+                                {
+                                    <img src="~/images/bonnet.png" />
+                                }
+                                else if (item.Product_Category.name == "Fender")
+                                {
+
+
+                                    <img src="~/images/Fender.png" />
+                                }
+                                else if (item.Product_Category.name == "Bumper")
+                                {
+                                    <img src="~/images/bumper.jpg" />
+
+                                }
+                                else if (item.Product_Category.name == "Grille")
+                                {
+                                    <img src="~/images/icons/req-compliance.svg">
+
+                                }
+                                else if (item.Product_Category.name == "Door Machine")
+                                {
+                                    <img src="~/images/icons/req-compliance.svg">
+
+                                }
+                                else if (item.Product_Category.name == "Light Case")
+                                {
+                                    <img src="~/images/icons/req-compliance.svg">
+
+                                }
+                                else if (item.Product_Category.name == "Bonut Lock")
+                                {
+                                    <img src="~/images/icons/req-compliance.svg">
+
+                                }
+                                else if (item.Product_Category.name == "Radiator Support")
+                                {
+                                    <img src="~/images/Radiator Support.png" />
+
+
+                                }
+                                else if (item.Product_Category.name == "Lamp")
+                                {
+                                    <img src="~/images/icons/req-compliance.svg">
+
+                                }
+                                else
+                                {
+                                    <img src="~/images/icons/req-compliance.svg">
+
+                                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(modmodelItemel => item.Product_Category.name)
+                            </td>
+                            <td>
+
+                                @Html.DisplayFor(modelItem => item.model.car.name)
+                                @Html.DisplayFor(modelItem => item.model.name)
+                                @Html.DisplayFor(modelItem => item.model.description)
+                            </td>
+                            <td>
+
+                                @Html.DisplayFor(modelItem => item.ShortDescription)
+                            </td>
+                            <td>
+                                @if (item.StockQuantity == 0)
+                                {
+                                    <img src="~/images/out_of_stock.jpg">
+                                }
+                                else {
+                                    @Html.DisplayFor(modelItem => item.StockQuantity)
+                                }
+                            </td>
+
+
+                            <td>
+                                @if (item.StockShopQTY == 0)
+                                {
+                                    <img src="~/images/out_of_stock.jpg">
+                                }
+                                else {
+                                    @Html.DisplayFor(modelItem => item.StockShopQTY)
+                                }
+                            </td>
+                            
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Price)
+                            </td>
+
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.product_Id }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.product_Id }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.product_Id })
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

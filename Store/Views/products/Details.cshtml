@@ -1,0 +1,84 @@
+﻿@model Store.product
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Model")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+            @Html.DisplayFor(model => model.model.name)
+
+
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Short Description")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShortDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Category")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product_Category.name)
+        </dd>
+        <dt>
+            @Html.DisplayName("Full Description")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FullDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Stock Quantity")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StockQuantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Old Price")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OldPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Special Price")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpecialPrice)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.product_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

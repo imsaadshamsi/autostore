@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Store.car_manufacturer>
+
+@{
+    ViewBag.Title = "Car Manufacturer List";
+}
+
+
+<div class="well well-small">
+    <h2>Car Manufacturer List</h2>
+
+    <p>
+        <input type="button" value="Add New" class="btn btn-primary" onclick="location.href='@Url.Action("Create")'" />
+    </p>
+    <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">
+            Manufacturer's
+        </div>
+        <table class="table">
+            @foreach (var item in Model)
+            {
+
+                <ul class="list-group">
+
+                    <li class="list-group-item justify-content-between">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    @Html.DisplayFor(modelItem => item.name)
+                                </div>
+                                <div class="row">
+
+                                    <div class="col-md-12">
+                                        <input type="button" value="Edit" class="btn btn-primary" onclick="location.href='@Url.Action("Edit", new { id = item.cm_Id })'" />
+                                        <input type="button" value="Details" class="btn btn-primary" onclick="location.href='@Url.Action("Details", new { id = item.cm_Id })'" />
+                                        <input type="button" value="Delete" class="btn btn-primary" onclick="location.href='@Url.Action("Delete", new { id = item.cm_Id })'" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </li>
+
+                </ul>
+            }
+        </table>
+    </div>
+</div>

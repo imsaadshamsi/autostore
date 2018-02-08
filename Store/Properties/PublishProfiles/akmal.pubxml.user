@@ -1,0 +1,632 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword />
+    <_PublishTargetUrl>C:\Users\saad\Documents\akmalApp</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="ApplicationInsights.config">
+      <publishTime>01/14/2017 16:26:04</publishTime>
+    </File>
+    <File Include="bin/ApplicationInsights.config">
+      <publishTime>01/14/2017 16:26:04</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>01/14/2017 16:30:15</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>01/14/2017 16:30:15</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
+      <publishTime>01/14/2017 16:26:01</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.DependencyCollector.dll">
+      <publishTime>01/14/2017 16:26:01</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.PerfCounterCollector.dll">
+      <publishTime>01/14/2017 16:26:02</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.ServerTelemetryChannel.dll">
+      <publishTime>01/14/2017 16:26:03</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Web.dll">
+      <publishTime>01/14/2017 16:26:04</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.WindowsServer.dll">
+      <publishTime>01/14/2017 16:26:03</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ApplicationInsights.dll">
+      <publishTime>01/14/2017 16:26:00</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.SignalR.Core.dll">
+      <publishTime>11/08/2017 16:38:39</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.SignalR.SystemWeb.dll">
+      <publishTime>11/08/2017 16:38:41</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>01/14/2017 16:25:56</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.dll">
+      <publishTime>11/08/2017 16:38:31</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Host.SystemWeb.dll">
+      <publishTime>11/08/2017 16:38:34</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.dll">
+      <publishTime>11/08/2017 16:38:36</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>01/14/2017 16:25:49</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>01/14/2017 16:25:50</publishTime>
+    </File>
+    <File Include="bin/Owin.dll">
+      <publishTime>11/08/2017 16:38:28</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>01/14/2017 16:25:55</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>01/14/2017 16:25:55</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>01/14/2017 16:25:55</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>01/14/2017 16:25:55</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>01/14/2017 16:25:55</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>01/14/2017 16:25:55</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>01/14/2017 16:25:55</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>01/14/2017 16:25:55</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>01/14/2017 16:25:55</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>01/14/2017 16:25:55</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>01/14/2017 16:25:55</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>01/14/2017 16:25:55</publishTime>
+    </File>
+    <File Include="bin/Store.dll">
+      <publishTime>01/11/2018 12:45:07</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>01/14/2017 16:25:54</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>01/14/2017 16:25:49</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>01/14/2017 16:25:54</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>01/14/2017 16:25:54</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>01/14/2017 16:25:49</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>01/14/2017 16:25:49</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Deployment.dll">
+      <publishTime>01/14/2017 16:25:49</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.dll">
+      <publishTime>01/14/2017 16:25:49</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Razor.dll">
+      <publishTime>01/14/2017 16:25:49</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>08/23/2017 21:20:37</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>08/23/2017 21:20:32</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>12/05/2017 12:57:05</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>01/14/2017 16:36:37</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>01/14/2017 16:36:37</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>01/14/2017 16:36:37</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>01/14/2017 16:36:37</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>01/14/2017 16:25:54</publishTime>
+    </File>
+    <File Include="images/icons/d-abt-accountability.svg">
+      <publishTime>03/02/2017 23:45:49</publishTime>
+    </File>
+    <File Include="images/icons/d-abt-continuosimp.svg">
+      <publishTime>03/02/2017 23:45:48</publishTime>
+    </File>
+    <File Include="images/icons/d-abt-customerfirst.svg">
+      <publishTime>03/02/2017 23:45:48</publishTime>
+    </File>
+    <File Include="images/icons/d-abt-enjoyingwork.svg">
+      <publishTime>03/02/2017 23:45:47</publishTime>
+    </File>
+    <File Include="images/icons/d-abt-integrity.svg">
+      <publishTime>03/02/2017 23:45:47</publishTime>
+    </File>
+    <File Include="images/icons/d-abt-oneteamonegoal.svg">
+      <publishTime>03/02/2017 23:45:47</publishTime>
+    </File>
+    <File Include="images/icons/d-blog-eml.svg">
+      <publishTime>03/02/2017 23:45:46</publishTime>
+    </File>
+    <File Include="images/icons/d-blog-emlh.svg">
+      <publishTime>03/02/2017 23:45:46</publishTime>
+    </File>
+    <File Include="images/icons/d-blog-fb.svg">
+      <publishTime>03/02/2017 23:45:45</publishTime>
+    </File>
+    <File Include="images/icons/d-blog-fbh.svg">
+      <publishTime>03/02/2017 23:45:45</publishTime>
+    </File>
+    <File Include="images/icons/d-blog-tw.svg">
+      <publishTime>03/02/2017 23:45:44</publishTime>
+    </File>
+    <File Include="images/icons/d-blog-twh.svg">
+      <publishTime>03/02/2017 23:45:44</publishTime>
+    </File>
+    <File Include="images/icons/d-cta-phn.svg">
+      <publishTime>03/02/2017 23:45:44</publishTime>
+    </File>
+    <File Include="images/icons/d-cta-req.svg">
+      <publishTime>03/02/2017 23:45:43</publishTime>
+    </File>
+    <File Include="images/icons/d-float-req.svg">
+      <publishTime>03/02/2017 23:45:43</publishTime>
+    </File>
+    <File Include="images/icons/d-h-lgn-hvr.svg">
+      <publishTime>03/02/2017 23:45:42</publishTime>
+    </File>
+    <File Include="images/icons/d-h-lgn.svg">
+      <publishTime>03/02/2017 23:45:42</publishTime>
+    </File>
+    <File Include="images/icons/d-h-sr-hover.svg">
+      <publishTime>03/02/2017 23:45:42</publishTime>
+    </File>
+    <File Include="images/icons/d-h-sr.svg">
+      <publishTime>03/02/2017 23:45:41</publishTime>
+    </File>
+    <File Include="images/icons/d-hstry-1.svg">
+      <publishTime>03/02/2017 23:45:41</publishTime>
+    </File>
+    <File Include="images/icons/d-hstry-10.svg">
+      <publishTime>03/02/2017 23:45:40</publishTime>
+    </File>
+    <File Include="images/icons/d-hstry-11.svg">
+      <publishTime>03/02/2017 23:45:40</publishTime>
+    </File>
+    <File Include="images/icons/d-hstry-12.svg">
+      <publishTime>03/02/2017 23:45:39</publishTime>
+    </File>
+    <File Include="images/icons/d-hstry-2.svg">
+      <publishTime>03/02/2017 23:45:39</publishTime>
+    </File>
+    <File Include="images/icons/d-hstry-3.svg">
+      <publishTime>03/02/2017 23:45:39</publishTime>
+    </File>
+    <File Include="images/icons/d-hstry-4.svg">
+      <publishTime>03/02/2017 23:45:38</publishTime>
+    </File>
+    <File Include="images/icons/d-hstry-5.svg">
+      <publishTime>03/02/2017 23:45:38</publishTime>
+    </File>
+    <File Include="images/icons/d-hstry-6.svg">
+      <publishTime>03/02/2017 23:45:37</publishTime>
+    </File>
+    <File Include="images/icons/d-hstry-7.svg">
+      <publishTime>03/02/2017 23:45:37</publishTime>
+    </File>
+    <File Include="images/icons/d-hstry-8.svg">
+      <publishTime>03/02/2017 23:45:37</publishTime>
+    </File>
+    <File Include="images/icons/d-hstry-9.svg">
+      <publishTime>03/02/2017 23:45:36</publishTime>
+    </File>
+    <File Include="images/icons/d-learnmore-blue.svg">
+      <publishTime>03/02/2017 23:45:36</publishTime>
+    </File>
+    <File Include="images/icons/d-learnmore-grey.svg">
+      <publishTime>03/02/2017 23:45:35</publishTime>
+    </File>
+    <File Include="images/icons/d-learnmore-white.svg">
+      <publishTime>03/02/2017 23:45:35</publishTime>
+    </File>
+    <File Include="images/icons/icon-regulatory-bin.svg">
+      <publishTime>03/02/2017 23:45:34</publishTime>
+    </File>
+    <File Include="images/icons/icon-regulatory-biohazard.svg">
+      <publishTime>03/02/2017 23:45:34</publishTime>
+    </File>
+    <File Include="images/icons/icon-regulatory-calendar.svg">
+      <publishTime>03/02/2017 23:45:34</publishTime>
+    </File>
+    <File Include="images/icons/icon-regulatory-plan.svg">
+      <publishTime>03/02/2017 23:45:33</publishTime>
+    </File>
+    <File Include="images/icons/icon-regulatory-request.svg">
+      <publishTime>03/02/2017 23:45:33</publishTime>
+    </File>
+    <File Include="images/icons/icon-regulatory-secure.svg">
+      <publishTime>03/02/2017 23:45:32</publishTime>
+    </File>
+    <File Include="images/icons/icon-regulatory-training.svg">
+      <publishTime>03/02/2017 23:45:32</publishTime>
+    </File>
+    <File Include="images/icons/icon-regulatory-waste.svg">
+      <publishTime>03/02/2017 23:45:32</publishTime>
+    </File>
+    <File Include="images/icons/icon-services-compliance.svg">
+      <publishTime>03/02/2017 23:45:31</publishTime>
+    </File>
+    <File Include="images/icons/icon-services-products.svg">
+      <publishTime>03/02/2017 23:45:31</publishTime>
+    </File>
+    <File Include="images/icons/icon-services-waste.svg">
+      <publishTime>03/02/2017 23:45:30</publishTime>
+    </File>
+    <File Include="images/icons/icons-01.svg">
+      <publishTime>03/02/2017 23:45:30</publishTime>
+    </File>
+    <File Include="images/icons/icons_d-abt-accountability.svg">
+      <publishTime>03/02/2017 23:45:29</publishTime>
+    </File>
+    <File Include="images/icons/icons_d-abt-continuosimp.svg">
+      <publishTime>03/02/2017 23:45:29</publishTime>
+    </File>
+    <File Include="images/icons/icons_d-abt-customerfirst.svg">
+      <publishTime>03/02/2017 23:45:28</publishTime>
+    </File>
+    <File Include="images/icons/icons_d-abt-enjoyingwork.svg">
+      <publishTime>03/02/2017 23:45:28</publishTime>
+    </File>
+    <File Include="images/icons/icons_d-abt-integrity.svg">
+      <publishTime>03/02/2017 23:45:27</publishTime>
+    </File>
+    <File Include="images/icons/icons_d-abt-oneteamonegoal.svg">
+      <publishTime>03/02/2017 23:45:27</publishTime>
+    </File>
+    <File Include="images/icons/icons_d-exurl-warning.svg">
+      <publishTime>03/02/2017 23:45:27</publishTime>
+    </File>
+    <File Include="images/icons/icons_d-f-fb.svg">
+      <publishTime>03/02/2017 23:45:26</publishTime>
+    </File>
+    <File Include="images/icons/icons_d-f-gplus.svg">
+      <publishTime>03/02/2017 23:45:26</publishTime>
+    </File>
+    <File Include="images/icons/icons_d-f-in.svg">
+      <publishTime>03/02/2017 23:45:25</publishTime>
+    </File>
+    <File Include="images/icons/icons_d-f-twi.svg">
+      <publishTime>03/02/2017 23:45:25</publishTime>
+    </File>
+    <File Include="images/icons/icons_d-f-utube.svg">
+      <publishTime>03/02/2017 23:45:24</publishTime>
+    </File>
+    <File Include="images/icons/icons_d-h-drpdn.svg">
+      <publishTime>03/02/2017 23:45:24</publishTime>
+    </File>
+    <File Include="images/icons/icons_d-h-ph.svg">
+      <publishTime>03/02/2017 23:45:24</publishTime>
+    </File>
+    <File Include="images/icons/icons_d-req-phn.svg">
+      <publishTime>03/02/2017 23:45:23</publishTime>
+    </File>
+    <File Include="images/icons/icons_d-req-quote.svg">
+      <publishTime>03/02/2017 23:45:23</publishTime>
+    </File>
+    <File Include="images/icons/icons_d-wastesrv-arw.svg">
+      <publishTime>03/02/2017 23:45:22</publishTime>
+    </File>
+    <File Include="images/icons/icons_m-f-fb.svg">
+      <publishTime>03/02/2017 23:45:22</publishTime>
+    </File>
+    <File Include="images/icons/icons_m-f-twi copy 2.svg">
+      <publishTime>03/02/2017 23:45:22</publishTime>
+    </File>
+    <File Include="images/icons/icons_m-f-twi copy 3.svg">
+      <publishTime>03/02/2017 23:45:21</publishTime>
+    </File>
+    <File Include="images/icons/icons_m-f-twi copy.svg">
+      <publishTime>03/02/2017 23:45:21</publishTime>
+    </File>
+    <File Include="images/icons/icons_m-f-twi.svg">
+      <publishTime>03/02/2017 23:45:20</publishTime>
+    </File>
+    <File Include="images/icons/icons_m-h-menu.svg">
+      <publishTime>03/02/2017 23:45:20</publishTime>
+    </File>
+    <File Include="images/icons/icons_m-h-menu_blog.svg">
+      <publishTime>03/02/2017 23:45:19</publishTime>
+    </File>
+    <File Include="images/icons/icons_m-h-phn.svg">
+      <publishTime>03/02/2017 23:45:19</publishTime>
+    </File>
+    <File Include="images/icons/icons_m-req-phn.svg">
+      <publishTime>03/02/2017 23:45:19</publishTime>
+    </File>
+    <File Include="images/icons/icons_m-req-quote.svg">
+      <publishTime>03/02/2017 23:45:18</publishTime>
+    </File>
+    <File Include="images/icons/icons_m-resrceblg-email.svg">
+      <publishTime>03/02/2017 23:45:18</publishTime>
+    </File>
+    <File Include="images/icons/icons_m-resrceblg-fb.svg">
+      <publishTime>03/02/2017 23:45:17</publishTime>
+    </File>
+    <File Include="images/icons/icons_m-resrceblg-twi.svg">
+      <publishTime>03/02/2017 23:45:17</publishTime>
+    </File>
+    <File Include="images/icons/learn-more.png">
+      <publishTime>03/02/2017 23:45:16</publishTime>
+    </File>
+    <File Include="images/icons/learn-more_new.png">
+      <publishTime>03/02/2017 23:45:16</publishTime>
+    </File>
+    <File Include="images/icons/login_icon.png">
+      <publishTime>03/02/2017 23:45:16</publishTime>
+    </File>
+    <File Include="images/icons/logoicon.png">
+      <publishTime>03/02/2017 23:45:15</publishTime>
+    </File>
+    <File Include="images/icons/m-menu-sr.svg">
+      <publishTime>03/02/2017 23:45:14</publishTime>
+    </File>
+    <File Include="images/icons/req-comm-wh.svg">
+      <publishTime>03/02/2017 23:45:14</publishTime>
+    </File>
+    <File Include="images/icons/req-comm.svg">
+      <publishTime>03/02/2017 23:45:14</publishTime>
+    </File>
+    <File Include="images/icons/req-compliance-wh.svg">
+      <publishTime>03/02/2017 23:45:13</publishTime>
+    </File>
+    <File Include="images/icons/req-compliance.svg">
+      <publishTime>03/02/2017 23:45:13</publishTime>
+    </File>
+    <File Include="images/icons/req-env-wh.svg">
+      <publishTime>03/02/2017 23:45:12</publishTime>
+    </File>
+    <File Include="images/icons/req-env.svg">
+      <publishTime>03/02/2017 23:45:12</publishTime>
+    </File>
+    <File Include="images/icons/req-info-wh.svg">
+      <publishTime>03/02/2017 23:45:11</publishTime>
+    </File>
+    <File Include="images/icons/req-info.svg">
+      <publishTime>03/02/2017 23:45:11</publishTime>
+    </File>
+    <File Include="images/icons/req-products-wh.svg">
+      <publishTime>03/02/2017 23:45:11</publishTime>
+    </File>
+    <File Include="images/icons/req-products.svg">
+      <publishTime>03/02/2017 23:45:10</publishTime>
+    </File>
+    <File Include="images/icons/req-recalls-wh.svg">
+      <publishTime>03/02/2017 23:45:10</publishTime>
+    </File>
+    <File Include="images/icons/req-recalls.svg">
+      <publishTime>03/02/2017 23:45:09</publishTime>
+    </File>
+    <File Include="images/icons/req-retrieval-wh.svg">
+      <publishTime>03/02/2017 23:45:09</publishTime>
+    </File>
+    <File Include="images/icons/req-retrieval.svg">
+      <publishTime>03/02/2017 23:45:09</publishTime>
+    </File>
+    <File Include="images/icons/req-sustain-wh.svg">
+      <publishTime>03/02/2017 23:45:08</publishTime>
+    </File>
+    <File Include="images/icons/req-sustain.svg">
+      <publishTime>03/02/2017 23:45:08</publishTime>
+    </File>
+    <File Include="images/icons/req-waste.svg">
+      <publishTime>03/02/2017 23:45:07</publishTime>
+    </File>
+    <File Include="images/tick.svg">
+      <publishTime>03/02/2017 23:45:07</publishTime>
+    </File>
+    <File Include="images/world-carbon.svg">
+      <publishTime>03/02/2017 23:45:06</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>11/08/2017 16:38:43</publishTime>
+    </File>
+    <File Include="scripts/ai.0.15.0-build58334.js">
+      <publishTime>01/14/2017 16:26:05</publishTime>
+    </File>
+    <File Include="scripts/ai.0.15.0-build58334.min.js">
+      <publishTime>01/14/2017 16:26:05</publishTime>
+    </File>
+    <File Include="scripts/bootstrap.js">
+      <publishTime>01/14/2017 16:36:37</publishTime>
+    </File>
+    <File Include="scripts/bootstrap.min.js">
+      <publishTime>01/14/2017 16:36:37</publishTime>
+    </File>
+    <File Include="scripts/jquery-1.10.2.js">
+      <publishTime>01/14/2017 16:36:34</publishTime>
+    </File>
+    <File Include="scripts/jquery-1.10.2.min.js">
+      <publishTime>01/14/2017 16:36:34</publishTime>
+    </File>
+    <File Include="scripts/jquery-1.10.2.min.map">
+      <publishTime>01/14/2017 16:36:34</publishTime>
+    </File>
+    <File Include="scripts/jquery.signalR-2.2.2.js">
+      <publishTime>11/08/2017 16:38:27</publishTime>
+    </File>
+    <File Include="scripts/jquery.signalR-2.2.2.min.js">
+      <publishTime>11/08/2017 16:38:26</publishTime>
+    </File>
+    <File Include="scripts/jquery.validate.js">
+      <publishTime>01/14/2017 16:36:36</publishTime>
+    </File>
+    <File Include="scripts/jquery.validate.min.js">
+      <publishTime>01/14/2017 16:36:36</publishTime>
+    </File>
+    <File Include="scripts/jquery.validate.unobtrusive.js">
+      <publishTime>01/14/2017 16:36:36</publishTime>
+    </File>
+    <File Include="scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>01/14/2017 16:36:36</publishTime>
+    </File>
+    <File Include="scripts/modernizr-2.6.2.js">
+      <publishTime>01/14/2017 16:36:37</publishTime>
+    </File>
+    <File Include="StoreDbModel.edmx.diagram">
+      <publishTime>10/27/2017 18:37:47</publishTime>
+    </File>
+    <File Include="Views/cars/Create.cshtml">
+      <publishTime>10/27/2017 21:22:57</publishTime>
+    </File>
+    <File Include="Views/cars/Delete.cshtml">
+      <publishTime>01/14/2017 17:12:13</publishTime>
+    </File>
+    <File Include="Views/cars/Details.cshtml">
+      <publishTime>01/14/2017 17:12:13</publishTime>
+    </File>
+    <File Include="Views/cars/Edit.cshtml">
+      <publishTime>01/14/2017 17:12:14</publishTime>
+    </File>
+    <File Include="Views/cars/Index.cshtml">
+      <publishTime>01/14/2017 17:12:14</publishTime>
+    </File>
+    <File Include="Views/car_manufacturer/Create.cshtml">
+      <publishTime>01/14/2017 16:36:32</publishTime>
+    </File>
+    <File Include="Views/car_manufacturer/Delete.cshtml">
+      <publishTime>01/14/2017 16:36:32</publishTime>
+    </File>
+    <File Include="Views/car_manufacturer/Details.cshtml">
+      <publishTime>01/14/2017 16:36:33</publishTime>
+    </File>
+    <File Include="Views/car_manufacturer/Edit.cshtml">
+      <publishTime>01/14/2017 16:36:33</publishTime>
+    </File>
+    <File Include="Views/car_manufacturer/Index.cshtml">
+      <publishTime>01/15/2017 18:30:41</publishTime>
+    </File>
+    <File Include="Views/car_models/Create.cshtml">
+      <publishTime>01/14/2017 17:15:12</publishTime>
+    </File>
+    <File Include="Views/car_models/Delete.cshtml">
+      <publishTime>01/14/2017 17:15:12</publishTime>
+    </File>
+    <File Include="Views/car_models/Details.cshtml">
+      <publishTime>01/14/2017 17:15:12</publishTime>
+    </File>
+    <File Include="Views/car_models/Edit.cshtml">
+      <publishTime>01/14/2017 17:15:12</publishTime>
+    </File>
+    <File Include="Views/car_models/Index.cshtml">
+      <publishTime>01/15/2017 19:35:31</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>08/23/2017 21:01:35</publishTime>
+    </File>
+    <File Include="Views/inventories/Create.cshtml">
+      <publishTime>01/14/2017 16:50:13</publishTime>
+    </File>
+    <File Include="Views/inventories/Delete.cshtml">
+      <publishTime>01/14/2017 16:50:13</publishTime>
+    </File>
+    <File Include="Views/inventories/Details.cshtml">
+      <publishTime>01/14/2017 16:50:13</publishTime>
+    </File>
+    <File Include="Views/inventories/Edit.cshtml">
+      <publishTime>01/14/2017 16:50:13</publishTime>
+    </File>
+    <File Include="Views/inventories/Index.cshtml">
+      <publishTime>01/14/2017 16:50:14</publishTime>
+    </File>
+    <File Include="Views/items/Create.cshtml">
+      <publishTime>01/14/2017 16:50:39</publishTime>
+    </File>
+    <File Include="Views/items/Delete.cshtml">
+      <publishTime>01/14/2017 16:50:40</publishTime>
+    </File>
+    <File Include="Views/items/Details.cshtml">
+      <publishTime>01/14/2017 16:50:40</publishTime>
+    </File>
+    <File Include="Views/items/Edit.cshtml">
+      <publishTime>01/14/2017 16:50:40</publishTime>
+    </File>
+    <File Include="Views/items/Index.cshtml">
+      <publishTime>01/14/2017 16:50:40</publishTime>
+    </File>
+    <File Include="Views/products/Create.cshtml">
+      <publishTime>10/28/2017 00:01:51</publishTime>
+    </File>
+    <File Include="Views/products/Delete.cshtml">
+      <publishTime>01/28/2017 15:23:41</publishTime>
+    </File>
+    <File Include="Views/products/Details.cshtml">
+      <publishTime>11/14/2017 07:50:28</publishTime>
+    </File>
+    <File Include="Views/products/Edit.cshtml">
+      <publishTime>10/28/2017 00:42:17</publishTime>
+    </File>
+    <File Include="Views/products/Index.cshtml">
+      <publishTime>11/14/2017 11:53:17</publishTime>
+    </File>
+    <File Include="Views/Product_Category/Create.cshtml">
+      <publishTime>01/28/2017 14:55:29</publishTime>
+    </File>
+    <File Include="Views/Product_Category/Delete.cshtml">
+      <publishTime>01/28/2017 14:55:47</publishTime>
+    </File>
+    <File Include="Views/Product_Category/Details.cshtml">
+      <publishTime>01/28/2017 14:56:19</publishTime>
+    </File>
+    <File Include="Views/Product_Category/Edit.cshtml">
+      <publishTime>01/28/2017 14:55:01</publishTime>
+    </File>
+    <File Include="Views/Product_Category/Index.cshtml">
+      <publishTime>01/28/2017 14:53:40</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>08/23/2017 21:29:45</publishTime>
+    </File>
+    <File Include="Views/web.config">
+      <publishTime>01/14/2017 16:25:49</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>08/23/2017 20:49:04</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>01/11/2018 13:08:01</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

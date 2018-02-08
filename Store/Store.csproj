@@ -1,0 +1,496 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0B856398-FF39-49F9-8580-C585222E956D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Store</RootNamespace>
+    <AssemblyName>Store</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.1.2.3\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.1.2.3\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.1.2.3\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.1.2.3\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.1.2.3\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=1.2.3.490, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.1.2.3\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.2\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.2.2\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.2.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="images\bonnet.png" />
+    <Content Include="images\bumper.jpg" />
+    <Content Include="images\Door Skin.png" />
+    <Content Include="images\Door.png" />
+    <Content Include="images\Fender.png" />
+    <Content Include="images\icons\d-abt-accountability.svg" />
+    <Content Include="images\icons\d-abt-continuosimp.svg" />
+    <Content Include="images\icons\d-abt-customerfirst.svg" />
+    <Content Include="images\icons\d-abt-enjoyingwork.svg" />
+    <Content Include="images\icons\d-abt-integrity.svg" />
+    <Content Include="images\icons\d-abt-oneteamonegoal.svg" />
+    <Content Include="images\icons\d-blog-eml.svg" />
+    <Content Include="images\icons\d-blog-emlh.svg" />
+    <Content Include="images\icons\d-blog-fb.svg" />
+    <Content Include="images\icons\d-blog-fbh.svg" />
+    <Content Include="images\icons\d-blog-tw.svg" />
+    <Content Include="images\icons\d-blog-twh.svg" />
+    <Content Include="images\icons\d-cta-phn.svg" />
+    <Content Include="images\icons\d-cta-req.svg" />
+    <Content Include="images\icons\d-float-req.svg" />
+    <Content Include="images\icons\d-h-lgn-hvr.svg" />
+    <Content Include="images\icons\d-h-lgn.svg" />
+    <Content Include="images\icons\d-h-sr-hover.svg" />
+    <Content Include="images\icons\d-h-sr.svg" />
+    <Content Include="images\icons\d-hstry-1.svg" />
+    <Content Include="images\icons\d-hstry-10.svg" />
+    <Content Include="images\icons\d-hstry-11.svg" />
+    <Content Include="images\icons\d-hstry-12.svg" />
+    <Content Include="images\icons\d-hstry-2.svg" />
+    <Content Include="images\icons\d-hstry-3.svg" />
+    <Content Include="images\icons\d-hstry-4.svg" />
+    <Content Include="images\icons\d-hstry-5.svg" />
+    <Content Include="images\icons\d-hstry-6.svg" />
+    <Content Include="images\icons\d-hstry-7.svg" />
+    <Content Include="images\icons\d-hstry-8.svg" />
+    <Content Include="images\icons\d-hstry-9.svg" />
+    <Content Include="images\icons\d-learnmore-blue.svg" />
+    <Content Include="images\icons\d-learnmore-grey.svg" />
+    <Content Include="images\icons\d-learnmore-white.svg" />
+    <Content Include="images\icons\icon-regulatory-bin.svg" />
+    <Content Include="images\icons\icon-regulatory-biohazard.svg" />
+    <Content Include="images\icons\icon-regulatory-calendar.svg" />
+    <Content Include="images\icons\icon-regulatory-plan.svg" />
+    <Content Include="images\icons\icon-regulatory-request.svg" />
+    <Content Include="images\icons\icon-regulatory-secure.svg" />
+    <Content Include="images\icons\icon-regulatory-training.svg" />
+    <Content Include="images\icons\icon-regulatory-waste.svg" />
+    <Content Include="images\icons\icon-services-compliance.svg" />
+    <Content Include="images\icons\icon-services-products.svg" />
+    <Content Include="images\icons\icon-services-waste.svg" />
+    <Content Include="images\icons\icons-01.svg" />
+    <Content Include="images\icons\icons_d-abt-accountability.svg" />
+    <Content Include="images\icons\icons_d-abt-continuosimp.svg" />
+    <Content Include="images\icons\icons_d-abt-customerfirst.svg" />
+    <Content Include="images\icons\icons_d-abt-enjoyingwork.svg" />
+    <Content Include="images\icons\icons_d-abt-integrity.svg" />
+    <Content Include="images\icons\icons_d-abt-oneteamonegoal.svg" />
+    <Content Include="images\icons\icons_d-exurl-warning.svg" />
+    <Content Include="images\icons\icons_d-f-fb.svg" />
+    <Content Include="images\icons\icons_d-f-gplus.svg" />
+    <Content Include="images\icons\icons_d-f-in.svg" />
+    <Content Include="images\icons\icons_d-f-twi.svg" />
+    <Content Include="images\icons\icons_d-f-utube.svg" />
+    <Content Include="images\icons\icons_d-h-drpdn.svg" />
+    <Content Include="images\icons\icons_d-h-ph.svg" />
+    <Content Include="images\icons\icons_d-req-phn.svg" />
+    <Content Include="images\icons\icons_d-req-quote.svg" />
+    <Content Include="images\icons\icons_d-wastesrv-arw.svg" />
+    <Content Include="images\icons\icons_m-f-fb.svg" />
+    <Content Include="images\icons\icons_m-f-twi copy 2.svg" />
+    <Content Include="images\icons\icons_m-f-twi copy 3.svg" />
+    <Content Include="images\icons\icons_m-f-twi copy.svg" />
+    <Content Include="images\icons\icons_m-f-twi.svg" />
+    <Content Include="images\icons\icons_m-h-menu.svg" />
+    <Content Include="images\icons\icons_m-h-menu_blog.svg" />
+    <Content Include="images\icons\icons_m-h-phn.svg" />
+    <Content Include="images\icons\icons_m-req-phn.svg" />
+    <Content Include="images\icons\icons_m-req-quote.svg" />
+    <Content Include="images\icons\icons_m-resrceblg-email.svg" />
+    <Content Include="images\icons\icons_m-resrceblg-fb.svg" />
+    <Content Include="images\icons\icons_m-resrceblg-twi.svg" />
+    <Content Include="images\icons\learn-more.png" />
+    <Content Include="images\icons\learn-more_new.png" />
+    <Content Include="images\icons\login_icon.png" />
+    <Content Include="images\icons\logoicon.png" />
+    <Content Include="images\icons\m-menu-sr.svg" />
+    <Content Include="images\icons\req-comm-wh.svg" />
+    <Content Include="images\icons\req-comm.svg" />
+    <Content Include="images\icons\req-compliance-wh.svg" />
+    <Content Include="images\icons\req-compliance.svg" />
+    <Content Include="images\icons\req-env-wh.svg" />
+    <Content Include="images\icons\req-env.svg" />
+    <Content Include="images\icons\req-info-wh.svg" />
+    <Content Include="images\icons\req-info.svg" />
+    <Content Include="images\icons\req-products-wh.svg" />
+    <Content Include="images\icons\req-products.svg" />
+    <Content Include="images\icons\req-recalls-wh.svg" />
+    <Content Include="images\icons\req-recalls.svg" />
+    <Content Include="images\icons\req-retrieval-wh.svg" />
+    <Content Include="images\icons\req-retrieval.svg" />
+    <Content Include="images\icons\req-sustain-wh.svg" />
+    <Content Include="images\icons\req-sustain.svg" />
+    <Content Include="images\icons\req-waste.svg" />
+    <Content Include="images\out_of_stock.jpg" />
+    <Content Include="images\Radiator Support.png" />
+    <Content Include="images\tick.svg" />
+    <Content Include="images\world-carbon.svg" />
+    <Content Include="scripts\ai.0.15.0-build58334.js" />
+    <Content Include="scripts\ai.0.15.0-build58334.min.js" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Properties\PublishProfiles\akmal.pubxml" />
+    <None Include="scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="scripts\bootstrap.js" />
+    <Content Include="scripts\bootstrap.min.js" />
+    <Content Include="scripts\jquery-1.10.2.js" />
+    <Content Include="scripts\jquery-1.10.2.min.js" />
+    <None Include="scripts\jquery.validate-vsdoc.js" />
+    <Content Include="scripts\jquery.signalR-2.2.2.js" />
+    <Content Include="scripts\jquery.signalR-2.2.2.min.js" />
+    <Content Include="scripts\jquery.validate.js" />
+    <Content Include="scripts\jquery.validate.min.js" />
+    <Content Include="scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="scripts\modernizr-2.6.2.js" />
+    <Content Include="StoreDbModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StoreDbModel.edmx</DependentUpon>
+      <LastGenOutput>StoreDbModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="StoreDbModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StoreDbModel.edmx</DependentUpon>
+      <LastGenOutput>StoreDbModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Web.config" />
+    <Content Include="Views\inventories\Create.cshtml" />
+    <Content Include="Views\inventories\Delete.cshtml" />
+    <Content Include="Views\inventories\Details.cshtml" />
+    <Content Include="Views\inventories\Edit.cshtml" />
+    <Content Include="Views\inventories\Index.cshtml" />
+    <Content Include="Views\items\Create.cshtml" />
+    <Content Include="Views\items\Delete.cshtml" />
+    <Content Include="Views\items\Details.cshtml" />
+    <Content Include="Views\items\Edit.cshtml" />
+    <Content Include="Views\items\Index.cshtml" />
+    <Content Include="Views\cars\Create.cshtml" />
+    <Content Include="Views\cars\Delete.cshtml" />
+    <Content Include="Views\cars\Details.cshtml" />
+    <Content Include="Views\cars\Edit.cshtml" />
+    <Content Include="Views\cars\Index.cshtml" />
+    <Content Include="Views\car_models\Create.cshtml" />
+    <Content Include="Views\car_models\Delete.cshtml" />
+    <Content Include="Views\car_models\Details.cshtml" />
+    <Content Include="Views\car_models\Edit.cshtml" />
+    <Content Include="Views\car_models\Index.cshtml" />
+    <Content Include="Views\Product_Category\Create.cshtml" />
+    <Content Include="Views\Product_Category\Delete.cshtml" />
+    <Content Include="Views\Product_Category\Details.cshtml" />
+    <Content Include="Views\Product_Category\Edit.cshtml" />
+    <Content Include="Views\Product_Category\Index.cshtml" />
+    <Content Include="Views\products\Create.cshtml" />
+    <Content Include="Views\products\Delete.cshtml" />
+    <Content Include="Views\products\Details.cshtml" />
+    <Content Include="Views\products\Edit.cshtml" />
+    <Content Include="Views\products\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="caadasdr.cs">
+      <DependentUpon>StoreDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="car.cs">
+      <DependentUpon>StoreDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="car_manufacturer.cs">
+      <DependentUpon>StoreDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\carsController.cs" />
+    <Compile Include="Controllers\car_manufacturerController.cs" />
+    <Compile Include="Controllers\car_modelsController.cs" />
+    <Compile Include="Controllers\ClientController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\inventoriesController.cs" />
+    <Compile Include="Controllers\itemsController.cs" />
+    <Compile Include="Controllers\productsController.cs" />
+    <Compile Include="Controllers\Product_CategoryController.cs" />
+    <Compile Include="Customer.cs">
+      <DependentUpon>StoreDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="inventory.cs">
+      <DependentUpon>StoreDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="item.cs">
+      <DependentUpon>StoreDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model.cs">
+      <DependentUpon>StoreDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NotificationComponent.cs" />
+    <Compile Include="NotificationHub.cs" />
+    <Compile Include="Order.cs">
+      <DependentUpon>StoreDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderItem.cs">
+      <DependentUpon>StoreDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="product.cs">
+      <DependentUpon>StoreDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product_Category.cs">
+      <DependentUpon>StoreDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>StoreDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>StoreDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+    <Compile Include="StoreDbModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StoreDbModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StoreDbModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StoreDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StoreDbModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StoreDbModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>StoreDbModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EntityDeploy Include="StoreDbModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>StoreDbModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="StoreDbModel.edmx.diagram">
+      <DependentUpon>StoreDbModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\car_manufacturer\Create.cshtml" />
+    <Content Include="Views\car_manufacturer\Delete.cshtml" />
+    <Content Include="Views\car_manufacturer\Details.cshtml" />
+    <Content Include="Views\car_manufacturer\Edit.cshtml" />
+    <Content Include="Views\car_manufacturer\Index.cshtml" />
+    <Content Include="scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Client\Index.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>9354</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:9354/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

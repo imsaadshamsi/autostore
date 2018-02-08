@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Store.car_manufacturer>
+
+@{
+    ViewBag.Title = "Car Manufacturer List";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Manufacturer </h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+
+            <div class="panel-body">
+                <table class="table table-bordered">
+                 
+                    <tr>
+                        <th>
+                            Name
+                        </th>
+                       
+                        <th>Action</th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.name)
+                            </td>
+                           <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.cm_Id }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.cm_Id }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.cm_Id })
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
